@@ -1,5 +1,23 @@
 @import "tailwindcss";
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+@theme {
+  --color-orange: hsl(26, 100%, 55%);
+  --color-pale-orange: hsl(25, 100%, 94%);
+  --color-very-dark-blue: hsl(220, 13%, 13%);
+  --color-dark-greyish-blue: hsl(220, 14%, 75%);
+  --color-light-greyish-blue: hsl(223, 64%, 98%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-Black: hsl(0, 0%, 0%);
+  --font-kumbh-sans: "Kumbh Sans", "Roboto";
+}
 
+/* 
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -19,8 +37,4 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+ */
