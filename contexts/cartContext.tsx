@@ -7,6 +7,8 @@ interface CartContextType {
   cartItems: iCartItem[];
   addOrUpdateProduct: (product: iCartItem) => void;
   getProduct: (product: iProduct) => iCartItem | null;
+  getAllCartItems: () => iCartItem[];
+  totalCartItems: number;
 }
 
 export const CartContext = createContext<CartContextType | undefined>(
@@ -16,7 +18,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cartItems, setCartItems] = useState<iCartItem[]>([]);
   function addOrUpdateProduct(product: iCartItem) {
     const newCartItems = [...cartItems];
-    const productIdx = newCartItems.findIndex((p) => (product.id = p.id));
+    const productIdx = newCartItems.findIndex((p) => product.id === p.id);
     const productDetails = {
       ...(newCartItems[productIdx] || {}),
       ...product,
@@ -37,9 +39,14 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   return (
     <CartContext.Provider
       value={{
-        cartItems,
+        cartItems: cartItems,
+        getAllCartItems: () => [...cartItems],
         addOrUpdateProduct,
         getProduct,
+        totalCartItems: cartItems.reduce(
+          (acc, current) => acc + current.quantity,
+          0
+        ),
       }}
     >
       {children}

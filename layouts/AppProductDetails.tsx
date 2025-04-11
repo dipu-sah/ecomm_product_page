@@ -5,6 +5,7 @@ import { AppQuantitySelectorButton } from "./AppQuantityButton";
 import { AppAddToCartButton } from "./AppAddToCartButton";
 import { AppProductImageGallery } from "./AppProductImageGallery";
 import { useState } from "react";
+import { getEffectivePrice } from "@/helper/getEffectivePrice";
 
 export function AppProductDetails({
   productDetails,
@@ -22,9 +23,6 @@ export function AppProductDetails({
   function quantityDecrease() {
     setCurrentQuantity(currentQuantity - 1);
   }
-  function getDiscountedPrice() {
-    return productDetails.price * (productDetails.discount / 100);
-  }
   return (
     <section className="flex flex-row gap-10 box-content px-10">
       <div className="w-[30rem]">
@@ -37,18 +35,24 @@ export function AppProductDetails({
         </h3>
         <article>{productDetails.description}</article>
         <div className="pricing-details">
-          <label className="font-bold text-2xl gap-5 flex flex-row flex-wrap">
+          <label className="font-bold text-2xl gap-4 flex flex-row flex-wrap h-8 items-baseline">
             <span className="text-black">
-              ${getDiscountedPrice().toFixed(2)}
+              $
+              {getEffectivePrice({
+                price: productDetails.price,
+                discount: productDetails.discount,
+              }).toFixed(2)}
             </span>
             {productDetails.discount > 0 && (
-              <span className="bg-black text-white text-base rounded-md box-border p-[0.3rem] text-center">
+              <span className="bg-black text-white text-base rounded-md box-border text-center px-2 flex justify-center items-center">
                 {productDetails.discount}%
               </span>
             )}
           </label>
           {productDetails.discount > 0 && (
-            <label className="line-through">${productDetails.price}</label>
+            <label className="line-through">
+              ${productDetails.price.toFixed(2)}
+            </label>
           )}
           <div className="flex flex-row flex-wrap gap-4 mt-8 box-border">
             <AppQuantitySelectorButton
