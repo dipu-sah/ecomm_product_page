@@ -8,7 +8,7 @@ export function AppQuantitySelectorButton({
   quantityDecrease?: () => void;
 }) {
   return (
-    <div className="flex flex-row bg-gray-100 w-fit rounded-md text-xl box-border p-2 font-bold">
+    <div className="flex flex-row bg-gray-100 w-fit rounded-md text-xl box-border p-2 font-bold justify-center items-center">
       <button
         className="w-8 text-orange  cursor-pointer"
         onClick={quantityDecrease}
