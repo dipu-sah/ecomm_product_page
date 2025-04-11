@@ -4,8 +4,8 @@ import { AppQuantitySelectorButton } from "@/layouts/AppQuantityButton";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "ABCFrontend Mentor | E-commerce product page",
-  icons: "../images/favicon-32x32.png",
+  title: "Frontend Mentor | E-commerce product page",
+  icons: "/images/favicon-32x32.png",
 };
 export default function Home() {
   return (
