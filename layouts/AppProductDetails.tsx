@@ -42,15 +42,15 @@ export function AppProductDetails({
               ${getDiscountedPrice().toFixed(2)}
             </span>
             {productDetails.discount > 0 && (
-              <>
-                <span className="bg-black text-white text-base rounded-md box-border p-[0.3rem] text-center">
-                  {productDetails.discount}%
-                </span>
-                <label className="line-through">${productDetails.price}</label>
-              </>
+              <span className="bg-black text-white text-base rounded-md box-border p-[0.3rem] text-center">
+                {productDetails.discount}%
+              </span>
             )}
           </label>
-          <div className="flex flex-row flex-wrap gap-4">
+          {productDetails.discount > 0 && (
+            <label className="line-through">${productDetails.price}</label>
+          )}
+          <div className="flex flex-row flex-wrap gap-4 mt-8 box-border">
             <AppQuantitySelectorButton
               currentQuantity={currentQuantity}
               quantityDecrease={quantityDecrease}
