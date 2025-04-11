@@ -1,19 +1,12 @@
-"use client";
-
-import { useState } from "react";
-
 export function AppQuantitySelectorButton({
-  initialQuantity = 0,
+  currentQuantity = 0,
+  quantityDecrease = () => {},
+  quantityIncrease = () => {},
 }: {
-  initialQuantity?: number;
+  currentQuantity?: number;
+  quantityIncrease?: () => void;
+  quantityDecrease?: () => void;
 }) {
-  const [currentQuantity, setCurrentQuantity] = useState(initialQuantity);
-  function quantityIncrease() {
-    setCurrentQuantity(currentQuantity + 1);
-  }
-  function quantityDecrease() {
-    setCurrentQuantity(currentQuantity - 1);
-  }
   return (
     <div className="flex flex-row bg-gray-100 w-fit rounded-md text-xl box-border p-2 font-bold">
       <button

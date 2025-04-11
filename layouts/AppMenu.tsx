@@ -10,19 +10,19 @@ export function AppMenu() {
         </Link>
       </li>
       <li className="h-full items-center justify-center flex cursor-pointer hover:border-b-4 border-amber-500 w-16">
-        Collections
+        <Link href={"collections"}>Collections</Link>
       </li>
       <li className="h-full items-center justify-center flex cursor-pointer hover:border-b-4 border-amber-500 w-16">
-        Men
+        <Link href={"men"}>Men</Link>
       </li>
       <li className="h-full items-center justify-center flex cursor-pointer hover:border-b-4 border-amber-500 w-16">
-        Women
+        <Link href={"women"}>Women</Link>
       </li>
       <li className="h-full items-center justify-center flex cursor-pointer hover:border-b-4 border-amber-500 w-16">
-        About
+        <Link href={"about"}>About</Link>
       </li>
       <li className="h-full items-center justify-center flex cursor-pointer hover:border-b-4 border-amber-500 w-16">
-        Contact
+        <Link href={"contact"}>Contact</Link>
       </li>
       <div className="spacer grow "></div>
       <li className="w-6 aspect-square mr-8 box-border font-black cursor-pointer">

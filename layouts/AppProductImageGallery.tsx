@@ -1,37 +1,21 @@
 "use client";
-import { url } from "inspector";
 import Image from "next/image";
 import { useState } from "react";
+import { AppImageModal } from "./AppImageModal";
 
-export function AppCarousal({ imageURL }: { imageURL: string[] }) {
+export function AppProductImageGallery({ imageURL }: { imageURL: string[] }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div className="carousal flex flex-row flex-wrap gap-10 box-content py-8">
       {isModalOpen && (
-        <div
-          onKeyDown={(key) => {
-            console.log({ key });
-
-            if (key.key == "Esc") {
-              setIsModalOpen(false);
-            }
-          }}
-          className="z-10 absolute top-0 left-0 w-full h-full flex flex-row justify-center items-center"
-          onClick={() => {
+        <AppImageModal
+          allImages={imageURL}
+          onClose={() => {
             setIsModalOpen(false);
           }}
-        >
-          <div
-            className="content w-1/2 h-1/2"
-            onClick={(e) => {
-              e.stopPropagation();
-            }}
-          >
-            <div className="w-full h-full bg-orange"></div>
-          </div>
-        </div>
+        />
       )}
 
       <div
