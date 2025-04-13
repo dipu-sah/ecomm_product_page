@@ -13,20 +13,22 @@ export function AppMenu() {
   const cartContext = useContext(CartContext);
   function MenuItem({ className = "" }: { className?: string }) {
     return (
-      <menu className={`list-none gap-3 items-center flex grow ${className}`}>
-        <li className="w-full h-full items-center flex cursor-pointer hover:border-b-4 border-amber-500">
+      <menu
+        className={`list-none gap-5 items-center flex grow h-full ${className}`}
+      >
+        <li className="h-full items-center flex cursor-pointer hover:border-b-4 border-amber-500">
           <Link href={"collections"}>Collections</Link>
         </li>
-        <li className="w-full h-full items-center flex cursor-pointer hover:border-b-4 border-amber-500">
+        <li className="h-full items-center flex cursor-pointer hover:border-b-4 border-amber-500">
           <Link href={"men"}>Men</Link>
         </li>
-        <li className="w-full h-full items-center  flex cursor-pointer hover:border-b-4 border-amber-500">
+        <li className="h-full items-center  flex cursor-pointer hover:border-b-4 border-amber-500">
           <Link href={"women"}>Women</Link>
         </li>
-        <li className="w-full h-full items-center  flex cursor-pointer hover:border-b-4 border-amber-500">
+        <li className="h-full items-center  flex cursor-pointer hover:border-b-4 border-amber-500">
           <Link href={"about"}>About</Link>
         </li>
-        <li className="w-full h-full items-center flex cursor-pointer hover:border-b-4 border-amber-500">
+        <li className="h-full items-center flex cursor-pointer hover:border-b-4 border-amber-500">
           <Link href={"contact"}>Contact</Link>
         </li>
       </menu>
@@ -34,7 +36,7 @@ export function AppMenu() {
   }
   return (
     <>
-      <div className="flex-row list-none h-24 gap-3 items-center flex">
+      <div className="flex-row list-none h-24 gap-3 items-center flex px-4 md:px-0">
         <div className="flex flex-row gap-4">
           <Image
             onClick={() => {
@@ -102,7 +104,7 @@ export function AppMenu() {
               />
             </div>
             {isShowingCartOverView && (
-              <div className="z-20 absolute w-80 right-0 top-7 bg-white shadow-2xl">
+              <div className="z-20 absolute w-60 sm:w-72  top-19 right-[-60] md:right-0 md:top-7 bg-white shadow-2xl rounded-xl">
                 <AppCartOverview />
               </div>
             )}
