@@ -24,11 +24,11 @@ export function AppProductDetails({
     setCurrentQuantity(currentQuantity - 1);
   }
   return (
-    <section className="flex flex-row gap-10 box-content px-10">
-      <div className="w-[30rem]">
+    <section className="flex flex-row flex-wrap box-border  md:pt-8">
+      <div className="w-full md:w-1/4 grow">
         <AppProductImageGallery imageURL={productDetails.images} />
       </div>
-      <aside className="flex flex-col gap-6 box-content pt-24 text-gray-600">
+      <aside className="w-1/2 flex flex-col gap-6 box-border lg:px-28 lg:pt-24  md:px-12 text-gray-600 grow ">
         <h4 className="font-[600] uppercase">Sneaker Company</h4>
         <h3 className="text-3xl font-bold text-black">
           {productDetails.title}
@@ -55,16 +55,20 @@ export function AppProductDetails({
             </label>
           )}
           <div className="flex flex-row flex-wrap gap-4 mt-8 box-border">
-            <AppQuantitySelectorButton
-              currentQuantity={currentQuantity}
-              quantityDecrease={quantityDecrease}
-              quantityIncrease={quantityIncrease}
-            />
-            <AppAddToCartButton
-              onClick={() => {
-                onAddToCart(currentQuantity);
-              }}
-            />
+            <div className="grow">
+              <AppQuantitySelectorButton
+                currentQuantity={currentQuantity}
+                quantityDecrease={quantityDecrease}
+                quantityIncrease={quantityIncrease}
+              />
+            </div>
+            <div className="w-1/2 grow">
+              <AppAddToCartButton
+                onClick={() => {
+                  onAddToCart(currentQuantity);
+                }}
+              />
+            </div>
           </div>
         </div>
       </aside>
