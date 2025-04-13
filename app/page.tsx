@@ -17,20 +17,18 @@ export default function Home() {
       <header className="border-b-1 border-b-dark-greyish-blue w-full">
         <AppMenu></AppMenu>
       </header>
-      <div className="box-border p-8 md:p-0">
-        {PRODUCTS.map((product, index) => {
-          return (
-            <AppProductDetails
-              key={index}
-              productDetails={product}
-              initialQuantity={cartContext?.getProduct(product)?.quantity || 0}
-              onAddToCart={(quantity: number) => {
-                cartContext?.addOrUpdateProduct({ ...product, quantity });
-              }}
-            />
-          );
-        })}
-      </div>
+      {PRODUCTS.map((product, index) => {
+        return (
+          <AppProductDetails
+            key={index}
+            productDetails={product}
+            initialQuantity={cartContext?.getProduct(product)?.quantity || 0}
+            onAddToCart={(quantity: number) => {
+              cartContext?.addOrUpdateProduct({ ...product, quantity });
+            }}
+          />
+        );
+      })}
       <div className="attribution">
         Challenge by{" "}
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">

@@ -23,7 +23,7 @@ export function AppProductImageGallery({ imageURL }: { imageURL: string[] }) {
           <Image
             src={imageURL[currentIndex]}
             alt=""
-            className="h-fit w-full rounded-lg"
+            className="h-fit w-full"
             width={"100"}
             height={"100"}
           />
