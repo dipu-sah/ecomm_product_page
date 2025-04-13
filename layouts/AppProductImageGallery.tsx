@@ -9,7 +9,7 @@ export function AppProductImageGallery({ imageURL }: { imageURL: string[] }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <>
-      <div className="w-full h-full block md:hidden">
+      <div className="w-full h-fit md:hidden">
         <AppImageCarousal
           onNextClick={() => {
             setCurrentIndex(currentIndex + 1);

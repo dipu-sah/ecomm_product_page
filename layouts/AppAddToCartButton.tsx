@@ -8,7 +8,7 @@ export function AppAddToCartButton({
   return (
     <button
       onClick={onClick}
-      className="bg-orange w-full h-12 rounded-md cursor-pointer flex flex-row justify-center items-center text-black font-bold gap-2"
+      className="px-4 bg-orange w-full h-12 rounded-md cursor-pointer flex flex-row justify-center items-center text-black font-bold gap-2"
     >
       <Image
         src={"/images/icon-cart.svg"}

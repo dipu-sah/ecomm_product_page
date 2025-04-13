@@ -16,7 +16,7 @@ export function AppImageCarousal({
 }) {
   return (
     <div className="w-full h-fit flex justify-center items-center relative box-border">
-      <div className="w-full h-full">{children}</div>
+      {children}
       {!isPrevDisabled && (
         <button
           className="cursor-pointer absolute left-4 bg-white rounded-full h-12 aspect-square flex justify-center items-center"

@@ -50,7 +50,7 @@ export function AppImageModal({
             isNextDisabled={currentIndex == allImages.length - 1}
             isPrevDisabled={currentIndex == 0}
           >
-            <div className="mx-10 box-border">
+            <div className="mx-10 box-border w-full">
               <Image
                 src={allImages[currentIndex]}
                 alt=""
